@@ -1,0 +1,23 @@
+#spring:
+#  application:
+#    name: "gateway"
+#  profiles:
+#    active: "server"
+#  config:
+#    import: "optional:configserver:http://localhost:7777"
+
+server:
+  port: 7070
+
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: ${EUREKA_SERVER_ADDRESS:http://localhost:8763/eureka}
+
+
+spring:
+  application:
+    name: GATEWAY-SERVER
